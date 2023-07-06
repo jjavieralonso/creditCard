@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-inner">
+                <div class="front">
+                    <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img">
+                    <div class="row">
+                        <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="60px">
+                        <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="60px">
+                    </div>
+                    <div class="row card-no">
+                        <p id="cardNumberDisplay">XXXX XXXX XXXX XXXX</p>
+                    </div>
+                    <div class="row card-holder">
+                        <p>NOMBRE</p>
+                        <p>FECHA EXP.</p>
+                    </div>
+                    <div class="row name">
+                        <p id="cardholderNameDisplay">TU NOMBRE</p>
+                        <p id="expiryDateDisplay">XX / XX</p>
+                    </div>
+                </div>
+                <div class="back">
+                    <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img">
+                    <div class="bar"></div>
+                    <div class="row card-cvv">
+                        <div>
+                            <img src="https://i.ibb.co/S6JG8px/pattern.png">
+                        </div>
+                        <p id="securityCodeDisplay">XXX</p>
+                    </div>
+                    <div class="row card-text">
+                        <p>Gracias al diseñador que hizo esta tarjeta, Paul.</p> <!--https://freefrontend.com/css-credit-cards/-->
+                    </div>
+                    <div class="row signature">
+                        <p>FIRMA</p>
+                        <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="80px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form class="formCard" id="formPayment">
+        <label for="cardNumber">Número de Tarjeta de Crédito:</label>
+        <input type="text" id="cardNumber" name="cardNumber" pattern="\d{4} \d{4} \d{4} \d{4}"
+            placeholder="Despues de 4 numeros, usar espacio" maxlength="19" required>
+
+        <label for="cardholderName">Nombre del Titular:</label>
+        <input type="text" id="cardholderName" name="cardholderName" required>
+
+        <label for="expiryDate">Fecha de Vencimiento:</label>
+        <input type="text" id="expiryDate" name="expiryDate" pattern="(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})"
+            placeholder="MM/AA" required>
+
+        <label for="securityCode">Código de Seguridad (CVV):</label>
+        <input type="text" id="securityCode" name="securityCode" pattern="\d{3,4}" placeholder="XXX" maxlength="4"
+            required>
+    </form>
+    <button id="button-pay">Hacer el pago.</button>
+    <script src="script.js"></script>
+</body>
+
+</html>
